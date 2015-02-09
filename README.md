@@ -1,75 +1,76 @@
-Package Skeleton
-================
+# The super-awesome good-time playground
 
-[![Build Status](http://img.shields.io/travis/SammyK/package-skeleton.svg)](https://travis-ci.org/SammyK/package-skeleton)
-[![Total Downloads](http://img.shields.io/packagist/dm/sammyk/package-skeleton.svg)](https://packagist.org/packages/sammyk/package-skeleton)
-[![Latest Stable Version](http://img.shields.io/packagist/v/sammyk/package-skeleton.svg)](https://packagist.org/packages/sammyk/package-skeleton)
-[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/SammyK/package-skeleton/blob/master/LICENSE)
+[![Build Status](http://img.shields.io/travis/ChiPHP/good-time-playground.svg)](https://travis-ci.org/ChiPHP/good-time-playground)
+[![Latest Stable Version](http://img.shields.io/packagist/v/chi-php-ug/good-time-playground.svg)](https://packagist.org/packages/chi-php-ug/good-time-playground)
+[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/ChiPHP/good-time-playground/blob/master/LICENSE)
 
+Welcome to the super-awesome good-time playground for the Chicago PHP User Group!
 
-:package_description
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [Credits](#credits)
-- [License](#license)
+This package is a great way to pratice contributing to open source. If you see soemthing misspelled in the README, or maybe a test isn't passing, or you want to add a new feature, feel free to submit your own PR!
 
 
-Installation
-------------
+## Into
 
-Add the package-skeleton package to your `composer.json` file.
+The Silly Site Morpher is a library that takes a URL and returns the contents after it has undergone some sort of mutation.
 
-``` json
+The mutations are performed by "morpher providers" found under the `Morphers` folder.
+
+
+## Installation
+
+Add the following to your `composer.json` file.
+
+```json
 {
     "require": {
-        "sammyk/package-skeleton": "1.0.*"
+        "chi-php-ug/good-time-playground": "~0.0"
     }
 }
 ```
 
-Or via the command line in the root of your Laravel installation.
 
-``` bash
-$ composer require "sammyk/package-skeleton:1.0*"
+## Usage
+
+```php
+use ChiPhp\Playground\SillySiteMorpher;
+use ChiPhp\Playground\Morphers\BathroomMorpher;
+
+$ssm = new SillySiteMorpher('http://example.com');
+$morpher = new BathroomMorpher();
+$content = $ssm->morph($morpher);
+
+echo $content; // Now with some bathroom flare!
 ```
 
-Usage
------
+## Supported Morphers
 
-``` php
-use SammyK\Skeleton;
+There are a number of morphers you can use to make a silly site.
 
-$skeleton = new Skeleton();
-echo $skeleton->echoPhrase('Hello, World!');
+### Bathroom Morpher
 
+Replaces random words with bathroom-related words.
+
+```php
+use ChiPhp\Playground\Morphers\Bathroom;
+
+$morpher = new BathroomMorpher();
 ```
 
+### Add your own!
 
-Testing
--------
-
-``` bash
-$ phpunit
-```
+We've love to add more silly morphers to the package. Code your morpher to the `MorpherInterface` and add documentation for it!
 
 
-Contributing
-------------
+# Contributing
 
 Please see [CONTRIBUTING](https://github.com/SammyK/package-skeleton/blob/master/CONTRIBUTING.md) for details.
 
 
-Credits
--------
+# Credits
 
-- [Sammy Kaye Powers](https://github.com/SammyK)
 - [All Contributors](https://github.com/SammyK/package-skeleton/contributors)
 
 
-License
--------
+# License
 
 The MIT License (MIT). Please see [License File](https://github.com/SammyK/package-skeleton/blob/master/LICENSE) for more information.

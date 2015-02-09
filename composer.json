@@ -1,26 +1,25 @@
 {
-    "name": "sammyk/package-skeleton",
-    "description": "A skeleton package to use as a base",
-    "keywords": ["skeleton"],
-    "homepage": "https://github.com/SammyK/package-skeleton",
+    "name": "chi-php-ug/good-time-playground",
+    "description": "A super-awesome good-time playground!",
+    "keywords": ["playground"],
+    "homepage": "https://github.com/ChiPHP/good-time-playground",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Sammy Kaye Powers",
-            "email": "sammyk@sammykmedia.com",
-            "homepage": "http://sammyk.me",
-            "role": "Developer"
-        }
-    ],
     "require": {
         "php": ">=5.4.0"
     },
     "require-dev": {
-        "mockery/mockery": "dev-master@dev"
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "~0.9",
+        "squizlabs/php_codesniffer": "~2.0"
     },
     "autoload": {
         "psr-4": {
-            "SammyK\\Skeleton\\": ["src"]
+            "ChiPhp\\Playground\\": ["src"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ChiPhp\\Playground\\Test\\": "tests/"
         }
     }
 }
